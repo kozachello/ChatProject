@@ -10,22 +10,27 @@ import java.util.function.Consumer;
  */
 public class Client extends ConnectionControl {
 
-    public Client(Consumer<Serializable> ifGotSendBack) {
+    private String ipadress;
+    private int port;
+
+    public Client(String ipadress, int port, Consumer<Serializable> ifGotSendBack) {
         super(ifGotSendBack);
+        this.port = port;
+        this.ipadress = ipadress;
     }
 
     @Override
     protected boolean isServer() {
-        return false;
+        return false; // det er en klient
     }
 
     @Override
     protected String getIP() {
-        return null;
+        return ipadress;
     }
 
     @Override
     protected int getPort() {
-        return 0;
+        return port;
     }
 }

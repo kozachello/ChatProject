@@ -19,7 +19,7 @@ public class Server extends ConnectionControl {
 
     @Override
     protected boolean isServer() {
-        return true; // ik vigtigt da det er server
+        return true; // ok fordi det er en server
     }
 
     @Override
