@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0af9ed92-28a5-48df-8375-818934d9f708" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/home/client/Client.java" afterPath="$PROJECT_DIR$/src/home/client/Client.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/home/client/ClientView.java" afterPath="$PROJECT_DIR$/src/home/client/ClientView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/home/control/ConnectionControl.java" afterPath="$PROJECT_DIR$/src/home/control/ConnectionControl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/home/server/Server.java" afterPath="$PROJECT_DIR$/src/home/server/Server.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/home/view/MainChat.java" afterPath="$PROJECT_DIR$/src/home/view/MainChat.java" />
     </list>
     <list id="af67d844-27cd-4887-80d2-a0213afd8949" name="Failed commit: Default" comment="small changes #1" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -24,10 +19,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ConnectionControl.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ConnectionControl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/home/control/ConnectionControl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
+            <state relative-caret-position="-253">
               <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -75,8 +70,8 @@
       <file leaf-file-name="MainChat.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/home/view/MainChat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
-              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="16" selection-end-column="3" />
+            <state relative-caret-position="172">
+              <caret line="19" column="37" lean-forward="true" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -84,11 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClientView.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ClientView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/home/client/ClientView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="3" lean-forward="false" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
+            <state relative-caret-position="289">
+              <caret line="17" column="3" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -722,7 +717,7 @@
       <option name="presentableId" value="Default" />
       <updated>1488295063250</updated>
       <workItem from="1488295071066" duration="10223000" />
-      <workItem from="1488306790196" duration="6384000" />
+      <workItem from="1488306790196" duration="7021000" />
     </task>
     <task id="LOCAL-00001" summary="new!">
       <created>1488296201558</created>
@@ -745,11 +740,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488312558475</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="small changes #1">
+      <created>1488314137728</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1488314137728</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16607000" />
+    <option name="totallyTimeSpent" value="17244000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="561" y="40" width="1358" height="894" extended-state="0" />
@@ -795,10 +797,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="new!" />
     <MESSAGE value="new" />
-    <MESSAGE value="small changes #1" />
     <MESSAGE value="client + server added" />
     <MESSAGE value="client + server modified" />
-    <option name="LAST_COMMIT_MESSAGE" value="client + server modified" />
+    <MESSAGE value="small changes #1" />
+    <option name="LAST_COMMIT_MESSAGE" value="small changes #1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -877,28 +879,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/home/control/ConnectionControl.java">
+    <entry file="file://$PROJECT_DIR$/src/home/client/ClientView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        <state relative-caret-position="289">
+          <caret line="17" column="3" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/home/client/Client.java">
+    <entry file="file://$PROJECT_DIR$/src/home/view/MainChat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        <state relative-caret-position="172">
+          <caret line="19" column="37" lean-forward="true" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#501#502#0" expanded="true" />
-            <element signature="e#549#550#0" expanded="true" />
-            <element signature="e#595#596#0" expanded="true" />
-            <element signature="e#626#627#0" expanded="true" />
-            <element signature="e#671#672#0" expanded="true" />
-            <element signature="e#698#699#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -919,20 +915,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/home/view/MainChat.java">
+    <entry file="file://$PROJECT_DIR$/src/home/client/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="16" selection-end-column="3" />
+        <state relative-caret-position="136">
+          <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#501#502#0" expanded="true" />
+            <element signature="e#549#550#0" expanded="true" />
+            <element signature="e#595#596#0" expanded="true" />
+            <element signature="e#626#627#0" expanded="true" />
+            <element signature="e#671#672#0" expanded="true" />
+            <element signature="e#698#699#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/home/client/ClientView.java">
+    <entry file="file://$PROJECT_DIR$/src/home/control/ConnectionControl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="3" lean-forward="false" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
+        <state relative-caret-position="-253">
+          <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
