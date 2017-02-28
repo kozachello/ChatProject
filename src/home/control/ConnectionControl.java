@@ -6,7 +6,7 @@ import java.net.Socket;
 import java.util.function.Consumer;
 
 /**
- * Created by Козак on 28.02.2017.
+ * Created by Козак on 22.02.2017.
  */
 public abstract class ConnectionControl  {
 

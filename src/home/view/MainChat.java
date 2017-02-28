@@ -1,6 +1,7 @@
 package home.view;
 
 import home.client.Client;
+import home.control.ConnectionControl;
 import home.server.Server;
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -14,10 +15,18 @@ import javafx.stage.Stage;
 /**
  * Created by Козак on 14.02.2017.
  */
+/**
+ * <h1>View MainApp</h1>
+ * GUI til {@link home.view.MainChat}
+ * - mainChat
+ *
+ * @author Козак
+ */
 public class MainChat extends Application {
 
     private TextArea chatarea = new TextArea(); // main area for chat
     private boolean isServer = true;
+    private ConnectionControl connection = isServer ? createServer() : createClient();
 
     private Parent createContent() { // metode for vores kontent
 
@@ -38,7 +47,7 @@ public class MainChat extends Application {
 
     private Server createServer() {
         return new Server(19000, data -> {
-            Platform.runLater(() -> {
+            Platform.runLater(() -> {   // sender denne tråde i GUI app på ukendt tidspunkt
                 chatarea.appendText(data.toString() + "\n");
             });
         });
@@ -46,7 +55,7 @@ public class MainChat extends Application {
 
     private Client createClient() {
         return new Client("localhost", 19000, data -> {
-            Platform.runLater(() -> {
+            Platform.runLater(() -> {   // sender denne tråde i GUI app på ukendt tidspunkt
                 chatarea.appendText(data.toString() + "\n");
             });
         });
