@@ -37,8 +37,8 @@ public abstract class ConnectionControl  {
     class ConnectionThread extends Thread {
 
         private Socket socket;
-        private ObjectInputStream in;
-        private ObjectOutputStream out;
+        private ObjectInputStream in; // tråd ind
+        private ObjectOutputStream out; // tråd ud
 
         @Override
         public void run() {

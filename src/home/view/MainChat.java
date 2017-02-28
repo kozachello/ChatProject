@@ -24,9 +24,9 @@ import javafx.stage.Stage;
  */
 public class MainChat extends Application {
 
-    private TextArea chatarea = new TextArea(); // main area for chat
+    private TextArea chatarea = new TextArea(); // main area for vores chat
     private boolean isServer = true;
-    private ConnectionControl connection = isServer ? createServer() : createClient();
+    private ConnectionControl connection = isServer ? createServer() : createClient(); // checker om det er server eller ej
 
     private Parent createContent() { // metode for vores kontent
 
@@ -47,7 +47,7 @@ public class MainChat extends Application {
 
     private Server createServer() {
         return new Server(19000, data -> {
-            Platform.runLater(() -> {   // sender denne tråde i GUI app på ukendt tidspunkt
+            Platform.runLater(() -> {   // sender denne tråd i GUI app på ukendt tidspunkt
                 chatarea.appendText(data.toString() + "\n");
             });
         });
@@ -55,7 +55,7 @@ public class MainChat extends Application {
 
     private Client createClient() {
         return new Client("localhost", 19000, data -> {
-            Platform.runLater(() -> {   // sender denne tråde i GUI app på ukendt tidspunkt
+            Platform.runLater(() -> {   // sender denne tråd i GUI app på ukendt tidspunkt
                 chatarea.appendText(data.toString() + "\n");
             });
         });
