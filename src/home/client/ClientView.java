@@ -88,7 +88,6 @@ public class ClientView extends Application {
     public static void main(String args[]) {
         //Locale locale = Locale.getDefault(); // не уверен что понадобится
         launch(args);
-
     }
 }
 
