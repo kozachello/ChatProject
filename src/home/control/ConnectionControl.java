@@ -13,6 +13,7 @@ public abstract class ConnectionControl  {
     private Consumer<Serializable> ifGotSendBack; // handling over objekt af type Serializable (object==>byte)
     private ConnectionThread connThread = new ConnectionThread();
 
+    //
     public ConnectionControl(Consumer<Serializable> ifGotSendBack) {
         this.ifGotSendBack = ifGotSendBack;
         connThread.setDaemon(true);
@@ -31,7 +32,7 @@ public abstract class ConnectionControl  {
     }
 
     protected abstract boolean isServer(); // metoder behøver ik krop
-    protected abstract String getIP();
+    protected abstract String getIP(); // adgang for subklasser (@Override)
     protected abstract int getPort();
 
     class ConnectionThread extends Thread {
@@ -48,7 +49,7 @@ public abstract class ConnectionControl  {
                 ObjectInputStream in = new ObjectInputStream(socket.getInputStream())) { // try med resourcer (AutoClosable)
                     this.out = out;
                     this.socket = socket;
-                    socket.setTcpNoDelay(true);
+                    socket.setTcpNoDelay(true); // slå Nagle fra)
 
                 while (true) {
                     Serializable data = (Serializable) in.readObject();
