@@ -48,21 +48,21 @@ public abstract class ConnectionControl  {
 
         @Override
         public void run() { // baggrunds tråd
-            try (ServerSocket server = isServer() ? new ServerSocket(getPort()) : null;
-                Socket socket = isServer() ? server.accept() : new Socket(getIP(), getPort());
-                ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
-                ObjectInputStream in = new ObjectInputStream(socket.getInputStream())) { // try med resourcer (AutoClosable)
+            try (ServerSocket server = isServer() ? new ServerSocket(getPort()) : null; // try med resourcer (AutoClosable)
+                Socket socket = isServer() ? server.accept() : new Socket(getIP(), getPort()); // kontrolere om det er
+                ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream()); // server eller ej
+                ObjectInputStream in = new ObjectInputStream(socket.getInputStream())) {
                     this.out = out;
                     this.socket = socket;
                     socket.setTcpNoDelay(true); // slå Nagle fra)
 
                 while (true) {
-                    Serializable data = (Serializable) in.readObject();
-                    ifGotSendBack.accept(data);
+                    Serializable data = (Serializable) in.readObject(); // læser data
+                    ifGotSendBack.accept(data); // action efter læsning
                 }
 
             } catch (Exception e) {
-                ifGotSendBack.accept("connection is closed!");
+                ifGotSendBack.accept("connection is closed!"); // hvis der er ikke forbindelse
             }
         }
 

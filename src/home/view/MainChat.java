@@ -31,6 +31,12 @@ public class MainChat extends Application {
 
         TextField input = new TextField();
         input.setPrefHeight(30);
+        input.setOnAction(event -> { // action for tekstboksen
+            String message = isServer ? "Server> " : "Client> "; // hvem sender besked?
+            message += input.getText(); // hvem + besked
+            input.clear(); // tømme linjen
+            chatarea.appendText(message); // sætte tekst ind i chatten
+        });
         chatarea.setPrefHeight(420);
         VBox root = new VBox(30, chatarea, input);
         root.setPrefSize(400, 400);
