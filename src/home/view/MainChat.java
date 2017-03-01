@@ -24,7 +24,7 @@ import javafx.stage.Stage;
 public class MainChat extends Application {
 
     private TextArea chatarea = new TextArea(); // main area for vores chat
-    private boolean isServer = true;
+    private boolean isServer = false;
     private ConnectionControl connection = isServer ? createServer() : createClient(); // checker om det er server eller ej
 
     private Parent createContent() { // metode for vores kontent
@@ -35,7 +35,12 @@ public class MainChat extends Application {
             String message = isServer ? "Server> " : "Client> "; // hvem sender besked?
             message += input.getText(); // hvem + besked
             input.clear(); // tømme linjen
-            chatarea.appendText(message); // sætte tekst ind i chatten
+            chatarea.appendText(message + "\n"); // sætte tekst ind i chatten
+            try {
+                connection.send(message); // String implementerer Serializable, beskeden kan blive som den er
+            } catch (Exception e) {
+                chatarea.appendText("something wrong with sending..." + "\n"); // hvis der er ikke nogen ellers
+            }
         });
         chatarea.setPrefHeight(420);
         VBox root = new VBox(30, chatarea, input);
