@@ -37,6 +37,12 @@ public class MainChat extends Application {
         return root;
 
     }
+
+    @Override // initialisering før start() metoden (fra Application)
+    public void init() throws Exception {
+        connection.startConnection();
+    }
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("CHAT");
@@ -44,17 +50,22 @@ public class MainChat extends Application {
         primaryStage.show();
     }
 
+    @Override // lukker her... (fra Application)
+    public void stop() throws Exception {
+        connection.closeConnection();
+    }
+
     private Server createServer() {
         return new Server(19000, data -> {
-            Platform.runLater(() -> {   // sender denne tråd i GUI app på ukendt tidspunkt
-                chatarea.appendText(data.toString() + "\n");
+            Platform.runLater(() -> {   // sender denne tråd i GUI app på ukendt tidspunkt (kontrol til baggrunds tråd)
+                chatarea.appendText(data.toString() + "\n"); // variabel data er objekt
             });
         });
     }
 
     private Client createClient() {
         return new Client("localhost", 19000, data -> {
-            Platform.runLater(() -> {   // sender denne tråd i GUI app på ukendt tidspunkt
+            Platform.runLater(() -> {   // sender denne tråd i GUI app på ukendt tidspunkt (--//--)
                 chatarea.appendText(data.toString() + "\n");
             });
         });

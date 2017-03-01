@@ -7,6 +7,7 @@ import java.util.function.Consumer;
 
 /**
  * Created by Козак on 22.02.2017.
+ *
  * <h1>View MainApp</h1>
  * GUI til {@link home.control.ConnectionControl}
  * - kontrol af forbindelser
@@ -46,7 +47,7 @@ public abstract class ConnectionControl  {
         private ObjectOutputStream out; // tråd ud
 
         @Override
-        public void run() {
+        public void run() { // baggrunds tråd
             try (ServerSocket server = isServer() ? new ServerSocket(getPort()) : null;
                 Socket socket = isServer() ? server.accept() : new Socket(getIP(), getPort());
                 ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());

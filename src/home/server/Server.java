@@ -7,6 +7,7 @@ import java.util.function.Consumer;
 
 /**
  * Created by Козак on 22.02.2017.
+ *
  * <h1>View MainApp</h1>
  * GUI til {@link home.server.Server}
  * - server
@@ -18,7 +19,7 @@ public class Server extends ConnectionControl {
     private int port;
 
     public Server(int port, Consumer<Serializable> ifGotSendBack) {
-        super(ifGotSendBack);
+        super(ifGotSendBack); // konstruktor af superklassen
         this.port = port;
     }
 
