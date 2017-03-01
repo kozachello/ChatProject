@@ -7,6 +7,11 @@ import java.util.function.Consumer;
 
 /**
  * Created by Козак on 22.02.2017.
+ * <h1>View MainApp</h1>
+ * GUI til {@link home.client.Client}
+ * - client
+ *
+ * @author Козак
  */
 public class Client extends ConnectionControl {
 

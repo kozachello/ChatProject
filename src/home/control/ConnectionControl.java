@@ -7,13 +7,17 @@ import java.util.function.Consumer;
 
 /**
  * Created by Козак on 22.02.2017.
+ * <h1>View MainApp</h1>
+ * GUI til {@link home.control.ConnectionControl}
+ * - kontrol af forbindelser
+ *
+ * @author Козак
  */
 public abstract class ConnectionControl  {
 
     private Consumer<Serializable> ifGotSendBack; // handling over objekt af type Serializable (object==>byte)
     private ConnectionThread connThread = new ConnectionThread();
 
-    //
     public ConnectionControl(Consumer<Serializable> ifGotSendBack) {
         this.ifGotSendBack = ifGotSendBack;
         connThread.setDaemon(true);

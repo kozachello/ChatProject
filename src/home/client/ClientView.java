@@ -17,8 +17,7 @@ import javafx.stage.Stage;
 
 /**
  * Created by Козак on 14.02.2017.
- */
-/**
+ *
  * <h1>View MainApp</h1>
  * GUI til {@link home.client.ClientView }
  * - client view.
