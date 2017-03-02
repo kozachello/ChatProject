@@ -38,4 +38,9 @@ public class Server extends ConnectionControl {
         return port;
     }
 
+    @Override
+    protected String getUser() {
+        return null;
+    }
+
 }

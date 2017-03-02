@@ -19,6 +19,7 @@ public abstract class ConnectionControl  {
     private Consumer<Serializable> ifGotSendBack; // handling over objekt af type Serializable (object==>byte)
     private ConnectionThread connThread = new ConnectionThread();
 
+    // konstruktor...
     public ConnectionControl(Consumer<Serializable> ifGotSendBack) {
         this.ifGotSendBack = ifGotSendBack;
         connThread.setDaemon(true);
@@ -39,6 +40,7 @@ public abstract class ConnectionControl  {
     protected abstract boolean isServer(); // metoder behøver ik krop
     protected abstract String getIP(); // adgang for subklasser (@Override)
     protected abstract int getPort();
+    protected abstract String getUser(); // måske unødvendigt...
 
     class ConnectionThread extends Thread {
 

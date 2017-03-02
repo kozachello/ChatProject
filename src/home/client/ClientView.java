@@ -56,34 +56,24 @@ public class ClientView extends Application {
         Scene scene = new Scene(grid, 400, 300);
         //ClientDesktop desktop = new ClientDesktop();
 
-        /*button.setOnAction(event -> {
+        button.setOnAction(event -> {
             // some action here...
-            Client user = new Client(userBox.getText());
+            ChatUser user = new ChatUser(userBox.getText());
             System.out.println(user);
-            ThreadControl userThread = new ThreadControl(user.getUsername());
             if(user.usernameIsNotNull()) {
+                mainChat.setUserName(userBox.getText(), false);
                 primaryStage.close();
                 try {
-                    desktop.startChat(user);
+                    mainChat.start(new Stage());
                     // must connect to the socket..
-                    //userThread.run();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         });
 
-        /*button.setOnKeyPressed(new EventHandler<KeyEvent>() {
-
-            @Override
-            public void handle(KeyEvent event) {
-
-            }
-        }*/
-
         primaryStage.setScene(scene);
         primaryStage.show();
-
 
     }
 

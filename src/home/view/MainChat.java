@@ -1,8 +1,10 @@
 package home.view;
 
+import home.client.ChatUser;
 import home.client.Client;
 import home.control.ConnectionControl;
 import home.server.Server;
+import home.socket.ClientSocket;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Parent;
@@ -24,8 +26,19 @@ import javafx.stage.Stage;
 public class MainChat extends Application {
 
     private TextArea chatarea = new TextArea(); // main area for vores chat
-    private boolean isServer = false;
+    private static ChatUser user;
+    private ClientSocket clientSocket;
+    public static boolean isServer = false;
     private ConnectionControl connection = isServer ? createServer() : createClient(); // checker om det er server eller ej
+
+    public static void setUserName(String name, boolean notServer) {
+        user = new ChatUser(name);
+        isServer = notServer;
+    }
+
+    private String getUserName() {
+        return user.toString();
+    }
 
     private Parent createContent() { // metode for vores kontent
 

@@ -18,6 +18,7 @@ public class Client extends ConnectionControl {
 
     private String ipadress;
     private int port;
+    private ChatUser user;
 
     public Client(String ipadress, int port, Consumer<Serializable> ifGotSendBack) {
         super(ifGotSendBack); // konstruktor af superklassen
@@ -38,5 +39,10 @@ public class Client extends ConnectionControl {
     @Override
     protected int getPort() {
         return port;
+    }
+
+    @Override
+    protected String getUser() {
+        return user.toString();
     }
 }
