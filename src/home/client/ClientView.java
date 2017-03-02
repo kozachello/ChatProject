@@ -30,8 +30,9 @@ import javafx.stage.Stage;
 public class ClientView extends Application {
 
     private boolean isClient = true;
-    //private ConnectionControl connection = isClient ? createClient() : null;
     private ConnectionControl connection;
+    private ChatUser user;
+    //private ConnectionControl connection;
 
     private Parent createContent() {
 
@@ -56,18 +57,18 @@ public class ClientView extends Application {
         button.setOnAction(event -> {
             // some action here...
             //Client client = ClientView.createClient();
-            ChatUser user = new ChatUser(userBox.getText());
+            user = new ChatUser(userBox.getText());
             System.out.println(user);
             if(user.usernameIsNotNull()) {
-                createClient();
+                connection = isClient ? createClient() : null;
                 //mainChat.setUserName(userBox.getText(), false);
                 try {
-                    stop();
+                    //stop();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
                 try {
-                    //mainChat.start(new Stage());
+                    mainChat.start(new Stage());
                     // must connect to the socket..
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -106,10 +107,14 @@ public class ClientView extends Application {
     private Client createClient() {
         return new Client("localhost", 19000, data -> {
             Platform.runLater(() -> {
-
+                user.getUsername();
             });
         });
 
+    }
+
+    private boolean clientIsCreated() {
+        return true;
     }
 
     public static void main(String args[]) {
