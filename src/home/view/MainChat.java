@@ -28,7 +28,7 @@ public class MainChat extends Application {
     private TextArea chatarea = new TextArea(); // main area for vores chat
     private static ChatUser user;
     private ClientSocket clientSocket;
-    private boolean isServer = true; // skal skiftes indtil videre...
+    private boolean isServer = true; // skal skiftes mellem true/false (prototype #1)
     private ConnectionControl connection = isServer ? createServer() : createClient(); // checker om det er server eller ej
 
     /*public static void setUserName(String name, boolean notServer) {

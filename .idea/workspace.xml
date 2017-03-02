@@ -5,7 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChatProject/home/client/ClientView.class" afterPath="$PROJECT_DIR$/out/production/ChatProject/home/client/ClientView.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChatProject/home/view/MainChat.class" afterPath="$PROJECT_DIR$/out/production/ChatProject/home/view/MainChat.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/home/client/ClientView.java" afterPath="$PROJECT_DIR$/src/home/client/ClientView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/home/view/MainChat.java" afterPath="$PROJECT_DIR$/src/home/view/MainChat.java" />
     </list>
     <list id="af67d844-27cd-4887-80d2-a0213afd8949" name="Failed commit: Default" comment="small changes #1" />
@@ -38,8 +37,8 @@
       <file leaf-file-name="MainChat.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/home/view/MainChat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-83">
-              <caret line="30" column="35" lean-forward="false" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
+            <state relative-caret-position="189">
+              <caret line="30" column="85" lean-forward="false" selection-start-line="30" selection-start-column="85" selection-end-line="30" selection-end-column="85" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -784,7 +783,7 @@
       <workItem from="1488306790196" duration="8249000" />
       <workItem from="1488371657750" duration="5303000" />
       <workItem from="1488441947823" duration="9608000" />
-      <workItem from="1488471116360" duration="7703000" />
+      <workItem from="1488471116360" duration="7835000" />
     </task>
     <task id="LOCAL-00001" summary="new!">
       <created>1488296201558</created>
@@ -877,11 +876,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488477324365</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="prototype #3 (not finished)">
+      <created>1488479391891</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1488479391891</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41086000" />
+    <option name="totallyTimeSpent" value="41218000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="514" y="42" width="1358" height="894" extended-state="0" />
@@ -939,7 +945,8 @@
     <MESSAGE value="prototype #1" />
     <MESSAGE value="prototype #2" />
     <MESSAGE value="prototype #3" />
-    <option name="LAST_COMMIT_MESSAGE" value="prototype #3" />
+    <MESSAGE value="prototype #3 (not finished)" />
+    <option name="LAST_COMMIT_MESSAGE" value="prototype #3 (not finished)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1321,8 +1328,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/home/view/MainChat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-83">
-          <caret line="30" column="35" lean-forward="false" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
+        <state relative-caret-position="189">
+          <caret line="30" column="85" lean-forward="false" selection-start-line="30" selection-start-column="85" selection-end-line="30" selection-end-column="85" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
