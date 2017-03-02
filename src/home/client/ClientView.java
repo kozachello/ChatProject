@@ -1,9 +1,12 @@
 package home.client;
 
+import home.control.ConnectionControl;
 import home.view.MainChat;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -26,11 +29,13 @@ import javafx.stage.Stage;
  */
 public class ClientView extends Application {
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+    private boolean isClient = true;
+    //private ConnectionControl connection = isClient ? createClient() : null;
+    private ConnectionControl connection;
+
+    private Parent createContent() {
 
         MainChat mainChat = new MainChat();
-        primaryStage.setTitle("StartWindow");
         GridPane grid = new GridPane();
         grid.setAlignment(Pos.CENTER);
         grid.setHgap(10);
@@ -48,23 +53,21 @@ public class ClientView extends Application {
 
         Button button = new Button("Start");
         button.setAlignment(Pos.BASELINE_CENTER);
-        HBox hbox = new HBox(10);
-        hbox.setAlignment(Pos.BOTTOM_RIGHT);
-        hbox.getChildren().add(button);
-        grid.add(hbox, 1, 4);
-
-        Scene scene = new Scene(grid, 400, 300);
-        //ClientDesktop desktop = new ClientDesktop();
-
         button.setOnAction(event -> {
             // some action here...
+            //Client client = ClientView.createClient();
             ChatUser user = new ChatUser(userBox.getText());
             System.out.println(user);
             if(user.usernameIsNotNull()) {
-                mainChat.setUserName(userBox.getText(), false);
-                primaryStage.close();
+                createClient();
+                //mainChat.setUserName(userBox.getText(), false);
                 try {
-                    mainChat.start(new Stage());
+                    stop();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                try {
+                    //mainChat.start(new Stage());
                     // must connect to the socket..
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -72,8 +75,40 @@ public class ClientView extends Application {
             }
         });
 
-        primaryStage.setScene(scene);
+        HBox hbox = new HBox(10);
+        hbox.setAlignment(Pos.BOTTOM_RIGHT);
+        hbox.getChildren().add(button);
+        grid.add(hbox, 1, 4);
+
+        //Scene scene = new Scene(grid, 400, 300);
+        return grid;
+    }
+
+    @Override
+    public void init() throws Exception {
+        connection.startConnection();
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+
+        primaryStage.setTitle("StartWindow");
+        primaryStage.setScene(new Scene(createContent()));
         primaryStage.show();
+
+    }
+
+    @Override
+    public void stop() throws Exception {
+        connection.closeConnection();
+    }
+
+    private Client createClient() {
+        return new Client("localhost", 19000, data -> {
+            Platform.runLater(() -> {
+
+            });
+        });
 
     }
 

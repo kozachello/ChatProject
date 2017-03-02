@@ -38,6 +38,7 @@ public abstract class ConnectionControl  {
     }
 
     protected abstract boolean isServer(); // metoder behøver ik krop
+    protected abstract boolean isClient();
     protected abstract String getIP(); // adgang for subklasser (@Override)
     protected abstract int getPort();
     protected abstract String getUser(); // måske unødvendigt...

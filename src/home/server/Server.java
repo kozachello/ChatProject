@@ -29,6 +29,11 @@ public class Server extends ConnectionControl {
     }
 
     @Override
+    protected boolean isClient() {
+        return false;
+    }
+
+    @Override
     protected String getIP() {
         return null;
     }
