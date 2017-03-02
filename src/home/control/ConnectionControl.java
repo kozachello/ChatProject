@@ -25,6 +25,10 @@ public abstract class ConnectionControl  {
         connThread.setDaemon(true);
     }
 
+    public ConnectionThread getConnThread() {
+        return connThread;
+    }
+
     public void startConnection() throws Exception {
         connThread.start();
     }

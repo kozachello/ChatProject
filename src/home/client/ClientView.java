@@ -29,6 +29,7 @@ import javafx.stage.Stage;
  */
 public class ClientView extends Application {
 
+    // programmet skifter ikke automatisk mellem server og client på nuværende tidspunkt......
     private boolean isClient = true;
     private ConnectionControl connection = isClient ? createClient() : null;
     private ChatUser user;
@@ -60,10 +61,11 @@ public class ClientView extends Application {
             user = new ChatUser(userBox.getText());
             System.out.println(user);
             if(user.usernameIsNotNull()) {
+                //Thread t = connection.getConnThread();
                 //connection = isClient ? createClient() : null;
                 //mainChat.setUserName(userBox.getText(), false);
                 try {
-                    //stop();
+                    //t.interrupt();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -93,6 +95,7 @@ public class ClientView extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
+        Thread t = connection.getConnThread();
         primaryStage.setTitle("StartWindow");
         primaryStage.setScene(new Scene(createContent()));
         primaryStage.show();

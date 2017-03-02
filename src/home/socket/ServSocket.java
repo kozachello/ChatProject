@@ -29,9 +29,9 @@ public class ServSocket {
                     //while(true) {
                         byte[] buf = new byte[8 * 1024];
                         int readBytes = din.read(buf);
-                        String line = new String(buf, 0, readBytes);
-                        System.out.printf("%s", line);
-                        dout.write(line.getBytes());
+                        //String line = new String(buf, 0, readBytes);
+                        //System.out.printf("%s", line);
+                        //dout.write(line.getBytes());
                         dout.flush();
                         //serverSocket.accept();
                         //System.out.println("\nwaiting for the next line...");

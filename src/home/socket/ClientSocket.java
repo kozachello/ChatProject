@@ -1,7 +1,5 @@
 package home.socket;
 
-import home.client.ChatUser;
-
 import java.io.*;
 import java.net.Socket;
 
@@ -13,7 +11,7 @@ public class ClientSocket {
     private static final int PORT = 19000;
     private static final String HOST = "localhost";
 
-    public static void main(ChatUser socketUser) throws IOException {
+    public static void main() throws IOException {
 
         Socket socket = null;
 
