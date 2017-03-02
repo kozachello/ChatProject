@@ -30,7 +30,7 @@ import javafx.stage.Stage;
 public class ClientView extends Application {
 
     private boolean isClient = true;
-    private ConnectionControl connection;
+    private ConnectionControl connection = isClient ? createClient() : null;
     private ChatUser user;
     //private ConnectionControl connection;
 
@@ -60,7 +60,7 @@ public class ClientView extends Application {
             user = new ChatUser(userBox.getText());
             System.out.println(user);
             if(user.usernameIsNotNull()) {
-                connection = isClient ? createClient() : null;
+                //connection = isClient ? createClient() : null;
                 //mainChat.setUserName(userBox.getText(), false);
                 try {
                     //stop();
