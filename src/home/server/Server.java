@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class Server extends ConnectionControl {
 
     private int port;
-
+    // lav et array
     public Server(int port, Consumer<Serializable> ifGotSendBack) {
         super(ifGotSendBack); // konstruktor af superklassen
         this.port = port;

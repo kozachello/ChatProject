@@ -16,6 +16,7 @@ import java.util.function.Consumer;
  */
 public abstract class ConnectionControl  {
 
+    // skal være et array af tråde!!!!!
     private Consumer<Serializable> ifGotSendBack; // handling over objekt af type Serializable (object==>byte)
     private ConnectionThread connThread = new ConnectionThread();
 

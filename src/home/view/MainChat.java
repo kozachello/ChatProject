@@ -50,6 +50,7 @@ public class MainChat extends Application {
             input.clear(); // tømme linjen
             chatarea.appendText(message + "\n"); // sætte tekst ind i chatten
             try {
+                // det her er enkelt forbindelse... skal sendes til alle connections
                 connection.send(message); // String implementerer Serializable, beskeden kan blive som den er
             } catch (Exception e) {
                 chatarea.appendText("something wrong with sending..." + "\n"); // hvis der er ikke nogen ellers
