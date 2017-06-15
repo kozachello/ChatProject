@@ -76,7 +76,7 @@ public class SimpleBot {
         put("вполне", "yes");
         put("конечно", "yes");
         //whattime
-        put("котрый\\s.*час", "whattime");
+        put("который\\s.*час", "whattime");
         put("сколько\\s.*времени", "whattime");
         //no
         put("нет", "no");
@@ -109,9 +109,7 @@ public class SimpleBot {
     }
 
     public String sayInReturn(String msg, boolean ai) {
-        if(msg.trim().length() > 0) {
-            botMessage = (msg.trim().endsWith("?")) ? ELUSIVE_ANSWERS[random.nextInt(ELUSIVE_ANSWERS.length)] : COMMON_PHRASES[random.nextInt(COMMON_PHRASES.length)];
-        }
+        botMessage = (msg.trim().endsWith("?")) ? ELUSIVE_ANSWERS[random.nextInt(ELUSIVE_ANSWERS.length)] : COMMON_PHRASES[random.nextInt(COMMON_PHRASES.length)];
         if(ai) {
             botMessage = String.join(" ", msg.toLowerCase().split("[ /!:|,{;.]+?"));
             for(Map.Entry<String, String> o: PATTERNS_FOR_ANALYSIS.entrySet()) {
