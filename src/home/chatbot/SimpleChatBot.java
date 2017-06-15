@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
  */
 public class SimpleChatBot extends JFrame implements ActionListener {
 
-    final String TITLE_OF_PROGRAM = "Chat Robot: ";
+    final String TITLE_OF_PROGRAM = "Robot: ";
     final int START_LOCATION = 200;
     final int WINDOW_WIDTH = 400;
     final int WINDOW_HEIGHT = 400;
